@@ -1,0 +1,20 @@
+@media screen{
+	.button{
+		font-size:14px;
+		transition:1s;
+	}
+	.A span{
+		margin-right:6%;
+	}
+	.G span{
+		margin-left: 5%;
+	}
+	.General_Button_Wrapper{
+		width:40%;
+		margin-left:12%;
+	}
+	.Advance_Button_Wrapper{
+		width:20%;
+	}
+
+}

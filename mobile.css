@@ -1,0 +1,35 @@
+@media screen{
+	.button{
+		font-size:10px;
+		transition:1s;
+	}
+	
+	.A span{
+		margin-right:8%;
+	}
+	.General_Button_Wrapper{
+		width:40%;
+	}
+	.G span{
+		margin-left:7%;
+	}
+	.Advance_Button_Wrapper{
+		width:25%;
+	}
+	.Volume_Wrapper{
+		left:10px;
+	}
+	.Shuffle{
+		right:80%;
+	}
+	.switch{
+		right:40%;
+	}
+	.Hide{
+		right:4%;
+	}
+	.Show{
+		right:4%;
+	}
+
+}

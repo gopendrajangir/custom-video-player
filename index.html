@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video Player</title>
+	<!--Font-awesome-->
+
+	<link href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css" type="text/css" rel="stylesheet"/>
+
+	<!--Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300i|Alegreya+Sans:100i|Josefin+Sans:300|Poiret+One|Quicksand" rel="stylesheet">
+
+	<!--meta viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!--stylesheet-->
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="tablet.css" media="screen and (min-width:600px) and (max-width:900px)">
+	<link rel="stylesheet" href="mobile.css" media="screen and (min-width:320px) and (max-width:600px)">
+</head>
+<body>
+<!--Container-->
+	<div id="container">
+	<!--Video_Container-->
+	<div id="Video_Container">
+		<!--Video_Screen-->
+		<div id="Video_Screen">
+		<video id="Video" width="100%" height="100%" style="clear:left;">
+			<source src="Havana.mp4" type="video/mp4">
+			<source src="RockOn.webm" type="video/mp4">
+			<source src="Attention.mp4" type="video/mp4">
+			<source src="Besabriyan.mp4" type="video/mp4">
+			<source src="Despacito.mp4" type="video/mp4">
+			<source src="Dil.mp4" type="video/mp4">
+			<source src="PehliDafa.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		
+		<!--Progress_Bar-->
+
+		</div>
+		<div class="Timer">
+			<input type="range" id="Progress_Bar" min="0" max="100" value="0">
+			<div id="Progress"><div id="Progress_in"></div></div>
+		</div>
+
+		<!--Video_Controls-->
+
+		<div id="Video_Controls">
+
+			<div class="Current tooltip"></div>
+			<div class="Remain tooltip"></div>
+			<div class="tooltip ProgressTip"></div>
+			<div class="tooltip SbackTip">Step Backward</div>
+			<div class="tooltip PlayTip">Play</div>
+			<div class="tooltip RewindTip">Rewind</div>
+			<div class="tooltip PauseTip">Pause</div>
+			<div class="tooltip ForwardTip">Forward</div>
+			<div class="tooltip SforTip">Step Forward</div>
+			<div class="tooltip UnmuteTip">Unmute</div>
+			<div class="tooltip MuteTip">Mute</div>
+			<div class="tooltip VolumeTip"></div>
+			<div class="tooltip DownloadTip">Download</div>
+			<div class="tooltip CogTip">HD</div>
+			<div class="tooltip FullscreenTip">Full Screen</div>
+
+			
+			<!--Control_Buttons_Wrapper-->
+			
+			<div id="Controls">
+				<div id="Control_Buttons">
+			<!--
+					
+			-->
+					<div class="Volume_Button_Wrapper">
+						<table class="V">
+							<tr class="Vol">
+								<td class="Vol_Buttons">
+									<span class="fas fa-volume-off Mute button"></span>
+									<span class="fas fa-volume-up Unmute button"></span>
+								</td>
+							    <td class="Volume_Wrapper">
+									<input type="range" id="Volume_Bar" min="1" max="100" value="40">
+									<div id="Volume"><div id="Volume_in"></div></div>
+								</td>
+							</tr>
+						</table>
+					</div>
+			
+					<div class="General_Button_Wrapper">
+						<div class="G">
+						
+							<span class="fas fa-step-backward Sbackward button" ></span>					
+						
+							<span class="fas fa-backward Rewind button" ></span>
+						
+							<span class="fas fa-play Play_Button button" ></span>
+						
+							<span class="fas fa-pause Pause_Button button" ></span>
+						
+							<span class="fas fa-forward Fast_Forward button"></span>
+						
+							<span class="fas fa-step-forward Sforward button" ></span>
+						</div>
+					</div>
+			<!--
+					
+			-->
+					<div class="Advance_Button_Wrapper">
+						<div class="A">
+							<span class="fas fa-desktop button Fullscreen" onclick="goFullscreen()"></span>
+							<span class="fas fa-cog Cog button"></span>
+							<span class="fas fa-download Download button"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="Extras">
+			<span class="fas fa-random Shuffle"></span>
+			<div class="tooltip ShuffleTip">Shuffle</div>
+			<label class="switch">
+				<input class="checker" type="checkbox">
+				<span class="slider"></span>
+				<span class="back"></span>
+			</label>
+			<div class="tooltip AutoplayTip">Autoplay Next</div>
+			<span class="fas fa-chevron-circle-left fa-x Hide"></span>
+			<div class="tooltip HideS">Hide Playlist</div>
+			<span class="fas fa-chevron-circle-right fa-x Show"></span>
+			<div class="tooltip ShowS">Show Playlist</div>
+		</div>
+	<div id="Playlist_Wrapper">	
+		<ul class="List_Wrapper">
+			<h2 class="NoMatch">No Match Found</h2>
+			<li class="List"><img src="Aksh/Havana.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Havana X Rockbaye</h3>
+					<p>Mashup Havana X Tu Meri Rani X Rockbaye</p>
+				</div>
+			</li>
+			<li class="List"><img src="Aksh/RockOn.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Rock On(Revisited)</h3>
+					<p>Rock On Cover</p>
+				</div>
+			</li>
+			<li class="List"><img src="Aksh/Attention.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Attention X Phir Bhi</h3>
+					<p>Mashup Attention X Phir Bhi Tumko Chahunga</p>
+				</div>
+			</li>
+			<li class="List"><img src="Aksh/Besabriyan.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Besabriyan(M.S.Dhoni)</h3>
+					<p>Besabriyan Cover</p>
+				</div>
+			</li>
+			<li class="List"><img src="Aksh/Despacito.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Despacito X Naja Naja</h3>
+					<p>Mashup Despacito X Naja Naja X Suit Suit</p>
+				</div>
+			</li>
+			<li class="List"><img src="Aksh/Dil.png" alt="Image">
+			<div class="SongDetail">
+					<h3>Dil Diyan Gallan</h3>
+					<p>Dil Diyan Gallan Cover</p>
+				</div></li>
+			<li class="List"><img src="Aksh/PehliDafa.png" alt="Image">
+				<div class="SongDetail">
+					<h3>Pehli Dafa(Atif Aslam)</h3>
+					<p>Pehli Dafa Cover</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="SearchBox">
+			<input type="text" id="SearchBox" placeholder="Search for favorites..">
+		</div>
+	
+	</div>
+	
+<!--Scripts-->	
+	<script src="jquery.js"></script>
+	<script src="style.js"></script>
+</body>
+</html>
